@@ -226,7 +226,7 @@ public class InputControls : IInputActionCollection
                 {
                     ""name"": """",
                     ""id"": ""30ce0b9b-3da0-420a-abc3-8f2040388953"",
-                    ""path"": ""<Touchscreen>/touch/position/y"",
+                    ""path"": ""<Touchscreen>/pressure"",
                     ""interactions"": """",
                     ""processors"": ""Clamp(min=-1,max=1)"",
                     ""groups"": ""TouchScreen"",
@@ -377,18 +377,6 @@ public class InputControls : IInputActionCollection
                     ""action"": ""Steering"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true,
-                    ""modifiers"": """"
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""3d3dbb25-9147-4e77-ae9d-04d1c01d2666"",
-                    ""path"": ""<Touchscreen>/tilt/x"",
-                    ""interactions"": """",
-                    ""processors"": ""Clamp(min=-1,max=1)"",
-                    ""groups"": ""TouchScreen"",
-                    ""action"": ""Steering"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false,
                     ""modifiers"": """"
                 }
             ]

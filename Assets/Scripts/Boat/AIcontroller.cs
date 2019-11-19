@@ -110,6 +110,7 @@ namespace BoatAttack.Boat
         /// </summary>
         void CalculatePath()
         {
+            return;
             navPath = new NavMeshPath(); // New nav path
             NavMesh.CalculatePath(transform.position, curWPPos, 255, navPath);
             if (navPath.status == NavMeshPathStatus.PathComplete) // if the path is good(complete) use it

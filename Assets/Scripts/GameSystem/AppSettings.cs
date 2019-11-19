@@ -57,7 +57,10 @@ namespace BoatAttack
                     res = Camera.main.pixelHeight;
                     break;
             }
+            Debug.Log("Camera.main.pixelHeight: " + Camera.main.pixelHeight);
+            Debug.Log("res: " + res);
             var renderScale = Mathf.Clamp(res / Camera.main.pixelHeight, 0.1f, 1.0f);
+            Debug.Log("renderScale: " + renderScale);
             maxScale = renderScale;
             UnityEngine.Rendering.Universal.UniversalRenderPipeline.asset.renderScale = renderScale;
         }
@@ -75,17 +78,18 @@ namespace BoatAttack
                 switch (targetFramerate)
                 {
                     case Framerate._30:
-                        offset = currentFrametime > (1000f / 30f) ? -rate : rate;
+                        offset = currentFrametime > (1f / 30f) ? -rate : rate;
                         break;
                     case Framerate._60:
-                        offset = currentFrametime > (1000f / 30f) ? -rate : rate;
+                        offset = currentFrametime > (1f / 60f) ? -rate : rate;
                         break;
                     case Framerate._120:
-                        offset = currentFrametime > (1000f / 120f) ? -rate : rate;
+                        offset = currentFrametime > (1f / 120f) ? -rate : rate;
                         break;
                 }
 
-                currentDynamicScale = Mathf.Clamp(currentFrametime + offset, minScale, 1f);
+                currentDynamicScale = Mathf.Clamp(currentDynamicScale + offset, minScale, 1f);
+                Debug.Log("currentDynamicScale: " + currentDynamicScale);
                 
                 var offsetVec = new Vector2(Mathf.Lerp(1, currentDynamicScale, Mathf.Clamp01((1 - axisBias) * 2f)),
                     Mathf.Lerp(1, currentDynamicScale, Mathf.Clamp01(axisBias * 2f)));
