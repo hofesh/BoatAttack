@@ -63,6 +63,8 @@ namespace BoatAttack
             Debug.Log("renderScale: " + renderScale);
             maxScale = renderScale;
             UnityEngine.Rendering.Universal.UniversalRenderPipeline.asset.renderScale = renderScale;
+
+            // ToggleWaterShader(false);
         }
 
         private void Update()
@@ -89,7 +91,7 @@ namespace BoatAttack
                 }
 
                 currentDynamicScale = Mathf.Clamp(currentDynamicScale + offset, minScale, 1f);
-                Debug.Log("currentDynamicScale: " + currentDynamicScale);
+                // Debug.Log("currentDynamicScale: " + currentDynamicScale);
                 
                 var offsetVec = new Vector2(Mathf.Lerp(1, currentDynamicScale, Mathf.Clamp01((1 - axisBias) * 2f)),
                     Mathf.Lerp(1, currentDynamicScale, Mathf.Clamp01(axisBias * 2f)));
